@@ -84,12 +84,9 @@ jobs:
           token: ${{ secrets.TOKEN }}
           fetch-depth: 0
 
-      - name: Verify Helm folder
-        run: ls -R helm
-
       - name: Update image tag in Helm chart
         run: |
-          sed -i -e 's|^\s*tag: .*|  tag: "${{ github.run_id }}"|' helm/go-web-app-chart/values.yaml
+          sed -i 's|tag: .*|tag: "${{ github.run_id }}"|' go-web-app-chart/values.yaml
     
 
       - name: Update tag in Helm chart
