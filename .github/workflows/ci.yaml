@@ -9,6 +9,7 @@ on:
       - main
     paths-ignore:
       - 'README.md'
+      - 'go-web-app-chart/**'
       - 'helm/**'
       - 'k8s/**'
 
